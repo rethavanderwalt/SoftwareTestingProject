@@ -43,10 +43,11 @@ public class Manifest {
         }
         if (quantities.get(p) == 0) {
             quantities.remove(p);
-        }
-        if (quantities.containsKey(p)) {
             byWeight.remove(p);
         }
+//        if (quantities.containsKey(p)) {
+//            byWeight.remove(p);
+//        }
     }
     
     public double getTotalWeight() {

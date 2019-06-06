@@ -26,7 +26,7 @@ public class Box {
     
     
     public void addProduct(Product product, int quantity) {
-        if (canFit(product,quantity)); {
+        if (canFit(product, quantity)); {
             contents.addProduct(product, quantity);
         }
     }
@@ -60,15 +60,15 @@ public class Box {
 //    }
     
     public boolean canFit(Product p) {
-        return p.getWeight() < 40;
+        return p.getWeight() < 20;
     }
     
     public boolean canFit(Product p, int quantity) {
-        return (p.getWeight() * quantity) < 40;
+        return (p.getWeight() * quantity) < 20;
     }
     
     public double remainingCapacity() {
-        return 40 - this.getWeight();
+        return 20 - this.getWeight();
     }
     
     public boolean isFragile() {

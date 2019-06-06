@@ -22,9 +22,7 @@ public class Box {
             contents.addProduct(product, 1);
         }
     }
-    
-    
-    
+
     public void addProduct(Product product, int quantity) {
         if (canFit(product, quantity)); {
             contents.addProduct(product, quantity);
@@ -42,6 +40,9 @@ public class Box {
         if (this.isFragile()) {
             label.append("FRAGILE\n");
         }
+        if (this.isHeavy() == true) {
+            label.append("HEAVY\n");
+        }
         return label.toString();
     }
     
@@ -52,12 +53,6 @@ public class Box {
     public double getWeight() {
         return contents.getTotalWeight();
     }
-    
-//    public void addProduct(Product product) {
-//        if (canFit(product)) {
-//            contents.addProduct(product, 1);
-//        }
-//    }
     
     public boolean canFit(Product p) {
         return p.getWeight() < 20;
@@ -76,6 +71,13 @@ public class Box {
     }
     
     public boolean isHazardous() {
+        return false;
+    }
+    
+    public boolean isHeavy() {
+        if (this.getWeight() >=15){
+            return true;
+        }
         return false;
     }
 }
